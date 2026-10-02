@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check your physics lab spreadsheet and get potential rubric credit before submitting it in Canvas.">
+  <title>Physics Spreadsheet Check</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="top"><a href="./" aria-label="Physics Spreadsheet Check home"><span class="mark">Φ</span> PHYSICS LABS</a><span>Spreadsheet check</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">BEFORE YOU SUBMIT</p><h1>Check your spreadsheet.</h1><p>Choose your lab, add your Excel file, and see your potential rubric score and feedback.</p></div>
+    <div class="workspace">
+      <section class="upload-card" aria-labelledby="upload-title">
+        <h2 id="upload-title">Your lab worksheet</h2>
+        <form id="check-form">
+          <label for="lab">Lab rubric</label>
+          <select id="lab" name="lab" required><option value="">Choose your lab</option></select>
+          <div class="drop-zone" id="drop-zone">
+            <svg viewBox="0 0 32 32" width="40" height="40" aria-hidden="true"><path d="M7 3h12l6 6v20H7Z M19 3v7h6 M11 15h10 M11 20h10 M16 15v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <strong id="file-name">Drop your spreadsheet here</strong>
+            <span id="file-detail">Excel .xlsx · up to 10 MB</span>
+            <label class="file-button" for="file">Choose file</label>
+            <input id="file" type="file" accept=".xlsx" aria-label="Choose an Excel spreadsheet">
+          </div>
+          <p id="error" class="error" role="alert" hidden></p>
+          <button id="check" type="submit" class="primary">Check potential grade</button>
+          <button id="cancel" type="button" class="secondary" hidden>Cancel check</button>
+        </form>
+        <p id="status" role="status" aria-live="polite" class="status">Choose a lab and an Excel file to begin.</p>
+        <p class="privacy">Your spreadsheet stays on this device. Files and results aren’t saved by this site.</p>
+      </section>
+      <section class="result-card" id="results" aria-labelledby="result-title" aria-live="polite">
+        <div id="empty"><span class="result-label">POTENTIAL SCORE</span><h2 id="result-title">Room to improve,<br>before it’s due.</h2><p>Your score and feedback will appear here after you check a spreadsheet.</p><div class="tip"><strong>Start with the original spreadsheet.</strong><p>A PDF or screenshot can’t preserve formulas, tables, and charts. Export your worksheet as an Excel (.xlsx) file.</p></div></div>
+        <div id="scored" hidden><span class="result-label">POTENTIAL RUBRIC SCORE</span><div class="score"><strong id="score">—</strong><span>/ 10</span></div><div class="meter" aria-hidden="true"><div id="meter-fill"></div></div><p id="result-lab" class="result-lab"></p><h2>Rubric feedback</h2><ul id="feedback"></ul><p class="result-note">This is a preview, not a recorded grade. Your instructor may adjust credit for class instructions or other requirements. Submit your worksheet in Canvas when you’re ready.</p></div>
+      </section>
+    </div>
+    <details><summary>How to prepare your file</summary><div><p><strong>Excel:</strong> Save as Excel Workbook (.xlsx). Keep your formulas and charts in the file.</p><p><strong>Google Sheets:</strong> Choose File → Download → Microsoft Excel (.xlsx).</p><p><strong>PDF:</strong> Return to the original spreadsheet and export it as .xlsx. Renaming a PDF won’t convert it.</p><p>If formula results can’t be read, open the file in Excel or LibreOffice, recalculate, and save it again.</p><p>Nearby headings can be recognized within two columns, with a small placement deduction. Align headings over their data or merge a title across its table.</p></div></details>
+  </main>
+  <footer>Physics Spreadsheet Check · Seven lab rubrics · Submit final work in Canvas</footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
